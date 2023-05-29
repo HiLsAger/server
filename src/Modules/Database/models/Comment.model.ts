@@ -9,6 +9,7 @@ import {
   BelongsTo,
   Column,
   DataType,
+  Default,
   ForeignKey,
   Model,
   PrimaryKey,
@@ -26,7 +27,7 @@ export class Comment extends Model<
   @AutoIncrement
   @PrimaryKey
   @Column(DataType.INTEGER)
-  id: number;
+  id: CreationOptional<number>;
 
   @Column(DataType.TEXT)
   text: string;
@@ -40,11 +41,13 @@ export class Comment extends Model<
   @ForeignKey(() => User)
   @Column(DataType.INTEGER)
   user_id: number;
+  @BelongsTo(() => User)
   User?: NonAttribute<User>;
 
+  @Default(7)
   @ForeignKey(() => Status)
   @Column(DataType.INTEGER)
-  status_id: number;
+  status_id: CreationOptional<number>;
   @BelongsTo(() => Status)
   Status?: NonAttribute<Status>;
 

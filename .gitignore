@@ -400,3 +400,4 @@ dist
 .serverless/**/*.zip
 .yarn
 .yarnrc.yml
+clips

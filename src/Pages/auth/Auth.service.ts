@@ -20,7 +20,7 @@ export class AuthService {
     });
     if (!data) {
       throw new UnauthorizedException(
-        'Пол-ля с таким логином и паролем не найдено',
+        'Поля с таким логином и паролем не найдено',
       );
     }
     data.authKey = makeRandom(32);
@@ -28,3 +28,4 @@ export class AuthService {
     return data.authKey;
   }
 }
+

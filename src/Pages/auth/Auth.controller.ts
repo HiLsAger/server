@@ -3,7 +3,6 @@ import { LoginInput, RegisterInput } from './Auth.input';
 import { User } from 'src/Modules/Database/models/User.model';
 import { Auth, AuthGuard } from 'src/Modules/Guards/AuthGuard';
 import { ApiHeader } from '@nestjs/swagger';
-import { Video } from 'src/Modules/Database/models/Video.model';
 import { AuthService } from './Auth.service';
 
 @Controller()

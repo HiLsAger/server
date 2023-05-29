@@ -10,6 +10,7 @@ import {
   BelongsTo,
   Column,
   DataType,
+  Default,
   ForeignKey,
   Model,
   PrimaryKey,
@@ -42,10 +43,11 @@ export class Video extends Model<
   @BelongsTo(() => User)
   User?: NonAttribute<User>;
 
+  @Default(7)
   @ForeignKey(() => Status)
   @AllowNull(false)
   @Column(DataType.INTEGER)
-  status_id: number;
+  status_id: CreationOptional<number>;
   @BelongsTo(() => Status)
   Status?: NonAttribute<Status>;
 
